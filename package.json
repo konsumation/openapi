@@ -1,3 +1,9 @@
 {
-    "name": "@konsumation/openapi"
+    "name": "@konsumation/openapi",
+    "template": {
+        "inheritFrom": [
+          "arlac77/template-openapi",
+          "konsumation/template"
+        ]
+      }
 }
