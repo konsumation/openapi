@@ -13,8 +13,8 @@
     }
   ],
   "devDependencies": {
-    "swagger-jsdoc": "^6.2.7",
-    "semantic-release": "^19.0.5"
+    "semantic-release": "^19.0.5",
+    "swagger-jsdoc": "^6.2.7"
   },
   "repository": {
     "type": "git",
