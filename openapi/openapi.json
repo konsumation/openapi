@@ -1,5 +1,8 @@
 {
   "openapi": "3.0.3",
+  "servers":[{
+    "url": "https://mydomain.com"
+  }],
   "info": {
     "title": "Collect resource usage in a home environment",
     "version": "0.0.0-semantic-release"
@@ -10,6 +13,7 @@
         "tags": [
           "admin"
         ],
+        "summary" : "stop the service",
         "operationId": "stopServer",
         "description": "Stop konsum server.",
         "responses": {
@@ -38,6 +42,7 @@
         "tags": [
           "admin"
         ],
+        "summary" : "reload config",
         "operationId": "reloadConfig",
         "description": "Reload konsum systemd config.",
         "responses": {
@@ -66,6 +71,7 @@
         "tags": [
           "admin"
         ],
+        "summary" : "create backup",
         "operationId": "backupDataOnServer",
         "description": "Create backup on server.",
         "responses": {
@@ -92,6 +98,7 @@
         "tags": [
           "admin"
         ],
+        "summary" : "create backup",
         "operationId": "backupData",
         "description": "Create backup.",
         "responses": {
@@ -117,6 +124,7 @@
     },
     "/state": {
       "get": {
+        "summary" : "service status report",
         "operationId": "getServiceState",
         "description": "Retrieve service state.",
         "responses": {
@@ -140,6 +148,7 @@
         "tags": [
           "authenticate"
         ],
+        "summary" : "user login",
         "operationId": "authenticate",
         "description": "Login to request api token.",
         "externalDocs": {
