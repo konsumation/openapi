@@ -5,7 +5,8 @@
   }],
   "info": {
     "title": "Collect resource usage in a home environment",
-    "version": "0.0.0-semantic-release"
+    "version": "0.0.0-semantic-release",
+    "license" : { "name": "MIT" }
   },
   "paths": {
     "/admin/stop": {
@@ -140,7 +141,9 @@
               }
             }
           }
-        }
+        },
+        "security": [
+        ]
       }
     },
     "/authenticate": {
@@ -186,7 +189,9 @@
               }
             }
           }
-        }
+        },
+        "security": [
+        ]
       }
     },
     "/category": {
@@ -235,6 +240,7 @@
         "tags": [
           "category"
         ],
+        "summary" : "add category",
         "operationId": "addCategory",
         "description": "Add a new category.",
         "responses": {
@@ -261,6 +267,7 @@
         "tags": [
           "category"
         ],
+        "summary" : "delete category",
         "operationId": "deleteCategory",
         "description": "Delete a category.",
         "responses": {
@@ -327,6 +334,7 @@
         "tags": [
           "value"
         ],
+        "summary" : "get values of a category",
         "operationId": "getCategoryValues",
         "description": "List values of a category.",
         "responses": {
@@ -376,6 +384,7 @@
         "tags": [
           "value"
         ],
+        "summary" : "add values to a category",
         "operationId": "insertCategoryValues",
         "description": "Insert a value into a category.",
         "responses": {
@@ -412,6 +421,7 @@
         "tags": [
           "value"
         ],
+        "summary" : "delete values from a category",
         "operationId": "deleteCategoryValues",
         "description": "Delete a value from a category.",
         "responses": {
@@ -454,20 +464,13 @@
           "schema": {
             "$ref": "#/components/schemas/CategoryID"
           }
-        },
-        {
-          "name": "meter",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "$ref": "#/components/schemas/MeterID"
-          }
         }
       ],
       "get": {
         "tags": [
           "meter"
         ],
+        "summary": "list meters of a category",
         "operationId": "getCategoryMeters",
         "description": "List meters of a category.",
         "responses": {
@@ -507,6 +510,7 @@
         "tags": [
           "meter"
         ],
+        "summary": "add a meter to a category",
         "operationId": "addCategoryMeter",
         "description": "Add a meter to a category.",
         "responses": {
@@ -543,6 +547,7 @@
         "tags": [
           "meter"
         ],
+        "summary": "update a meter of a category",
         "operationId": "updateCategoryMeter",
         "description": "Update a meter.",
         "responses": {
@@ -585,20 +590,13 @@
           "schema": {
             "$ref": "#/components/schemas/CategoryID"
           }
-        },
-        {
-          "name": "note",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "$ref": "#/components/schemas/NoteID"
-          }
         }
       ],
       "get": {
         "tags": [
           "note"
         ],
+        "summary": "list notes of a category",
         "operationId": "getCategoryNotes",
         "description": "List notes of a category.",
         "responses": {
@@ -638,6 +636,7 @@
         "tags": [
           "note"
         ],
+        "summary": "add a note to a category",
         "operationId": "addCategoryNote",
         "description": "add a note to a category.",
         "responses": {
@@ -674,6 +673,7 @@
         "tags": [
           "note"
         ],
+        "summary": "add a note of a category",
         "operationId": "updateCategoryNote",
         "description": "Update a note.",
         "responses": {
@@ -718,11 +718,11 @@
           }
         },
         {
-          "name": "note",
+          "name": "meter",
           "in": "path",
           "required": true,
           "schema": {
-            "$ref": "#/components/schemas/NoteID"
+            "$ref": "#/components/schemas/MeterID"
           }
         }
       ],
@@ -730,6 +730,7 @@
         "tags": [
           "meter"
         ],
+        "summary": "delete a meter from a category",
         "operationId": "deleteCategoryMeter",
         "description": "Delete a meter.",
         "responses": {
@@ -786,6 +787,7 @@
         "tags": [
           "note"
         ],
+        "summary" : "delete a note from a category",
         "operationId": "deleteCategoryNote",
         "description": "Delete a note.",
         "responses": {
