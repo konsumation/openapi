@@ -2,8 +2,6 @@ name: Extract openapi definition
 'on': push
 jobs:
   publish_doc:
-    needs:
-      - update_openapi
     runs-on: ubuntu-latest
     steps:
       - run: npm ci
