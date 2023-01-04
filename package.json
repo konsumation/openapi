@@ -2,7 +2,7 @@
   "name": "@konsumation/openapi",
   "version": "0.0.0-semantic-release",
   "scripts":{
-    "lint" : "@redocly/cli lint openapi/openapi.json"
+    "lint" : "redocly lint openapi/openapi.json"
   },
   "publishConfig": {
     "access": "public"
