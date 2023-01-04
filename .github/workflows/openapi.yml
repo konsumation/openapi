@@ -8,7 +8,13 @@ jobs:
         node-version:
           - 18.12.1
     steps:
-      - run: npx @redocly/cli build-docs -o openapi/index.html openapi/openapi.json
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.5.1
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - run: npm ci
+      - run: npm run doc
       - uses: actions/checkout@v3
         with:
           repository: konsumation/konsumation.github.io
