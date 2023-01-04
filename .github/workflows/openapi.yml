@@ -3,6 +3,10 @@ name: Extract openapi definition
 jobs:
   publish_doc:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - 18.12.1
     steps:
       - run: npm ci
       - run: npx @redocly/cli build-docs -o openapi/index.html openapi/openapi.json
