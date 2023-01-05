@@ -1,10 +1,6 @@
 {
   "name": "@konsumation/openapi",
   "version": "0.0.0-semantic-release",
-  "scripts":{
-    "lint" : "redocly lint openapi/openapi.json",
-    "doc" : "redocly build-docs -o openapi/index.html openapi/openapi.json"
-  },
   "publishConfig": {
     "access": "public"
   },
@@ -17,9 +13,16 @@
       "name": "Konstantin Karpman"
     }
   ],
+  "scripts": {
+    "docs": "npm run docs:openapi",
+    "docs:openapi": "redocly build-docs -o openapi/index.html openapi/openapi.json",
+    "lint": "redocly lint openapi/openapi.json && npm run lint:openapi",
+    "lint:openapi": "redocly lint openapi/openapi.json",
+    "doc": "redocly build-docs -o openapi/index.html openapi/openapi.json"
+  },
   "devDependencies": {
-    "semantic-release": "^19.0.5",
-    "@redocly/cli": "^1.0.0-beta.120"
+    "@redocly/cli": "^1.0.0-beta.120",
+    "semantic-release": "^19.0.5"
   },
   "repository": {
     "type": "git",
