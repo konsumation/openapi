@@ -825,7 +825,9 @@
   "components": {
     "securitySchemes": {
       "konsum_auth": {
-        "type": "http",
+        "description": "API key to authorize requests",
+        "in": "header",
+        "type": "apiKey",
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }
