@@ -9,6 +9,35 @@
     "license" : { "name": "MIT" }
   },
   "paths": {
+    "/admin/token": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary" : "create token",
+        "operationId": "createToken",
+        "description": "create token.",
+        "responses": {
+          "200": {
+            "description": "token.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "konsum_auth": [
+              "konsum.admin.token"
+            ]
+          }
+        ]
+      }
+    },
     "/admin/stop": {
       "post": {
         "tags": [
@@ -977,6 +1006,15 @@
       },
       "TextOnlyMessage": {
         "type": "string"
+      },
+      "TokenResponse": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "description": "The access token issued."
+          }
+        }
       }
     }
   },
