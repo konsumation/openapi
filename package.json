@@ -21,7 +21,7 @@
     "doc": "redocly build-docs -o openapi/index.html openapi/openapi.json"
   },
   "devDependencies": {
-    "@redocly/cli": "^1.0.0-beta.124",
+    "@redocly/cli": "^1.0.0-beta.125",
     "semantic-release": "^21.0.1"
   },
   "repository": {
