@@ -8,7 +8,7 @@ jobs:
         node-version:
           - 18.17.1
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: konsumation/konsumation.github.io
       - uses: actions/setup-node@v3.8.1
@@ -17,7 +17,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run doc
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: konsumation/konsumation.github.io
       - name: Deploy Pages
