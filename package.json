@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@redocly/cli": "^1.4.1",
-    "semantic-release": "^22.0.7"
+    "semantic-release": "^22.0.8"
   },
   "repository": {
     "type": "git",
