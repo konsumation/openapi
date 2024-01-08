@@ -6,7 +6,7 @@
   "info": {
     "title": "Collect resource usage in a home environment",
     "version": "0.0.0-semantic-release",
-    "license" : { "name": "MIT" }
+    "license" : { "name": "MIT", "url": "https://github.com/konsumation/openapi/LICENSE" }
   },
   "paths": {
     "/admin/token": {
