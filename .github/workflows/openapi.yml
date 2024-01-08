@@ -6,18 +6,18 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 18.18.2
+          - 20.10.0
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.1.1
         with:
           repository: konsumation/konsumation.github.io
-      - uses: actions/setup-node@v4.0.0
+      - uses: actions/setup-node@v4.0.1
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
       - run: npm ci
-      - run: npm run doc
-      - uses: actions/checkout@v4
+      - run: npm run docs
+      - uses: actions/checkout@v4.1.1
         with:
           repository: konsumation/konsumation.github.io
       - name: Deploy Pages
