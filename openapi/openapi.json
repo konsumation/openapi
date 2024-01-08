@@ -56,6 +56,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Request"
           }
         },
         "security": [
@@ -85,6 +88,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Request"
           }
         },
         "security": [
@@ -113,7 +119,10 @@
                   "$ref": "#/components/schemas/TextOnlyMessage"
                 }
               }
-            }
+            },
+          "401": {
+            "description": "Unauthorized Request"
+          }
           }
         },
         "security": [
@@ -140,7 +149,10 @@
                   "$ref": "#/components/schemas/TextOnlyMessage"
                 }
               }
-            }
+            },
+          "401": {
+            "description": "Unauthorized Request"
+          }
           }
         },
         "security": [
@@ -242,7 +254,10 @@
                   }
                 }
               }
-            }
+            },
+          "401": {
+            "description": "Unauthorized Request"
+          }
           }
         },
         "security": [
@@ -281,7 +296,10 @@
                   "$ref": "#/components/schemas/Message"
                 }
               }
-            }
+            },
+          "401": {
+            "description": "Unauthorized Request"
+          }
           }
         },
         "security": [
@@ -309,6 +327,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Request"
           },
           "404": {
             "description": "No such category error message.",
@@ -380,6 +401,9 @@
               }
             }
           },
+          "401": {
+            "description": "Unauthorized Request"
+          },
           "404": {
             "description": "No such category error message.",
             "content": {
@@ -427,6 +451,9 @@
               }
             }
           },
+          "401": {
+            "description": "Unauthorized Request"
+          },
           "404": {
             "description": "No such category error message.",
             "content": {
@@ -463,6 +490,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Request"
           },
           "404": {
             "description": "No such category error message.",
@@ -516,6 +546,9 @@
               }
             }
           },
+          "401": {
+            "description": "Unauthorized Request"
+          },
           "404": {
             "description": "No such category error message.",
             "content": {
@@ -553,6 +586,9 @@
               }
             }
           },
+          "401": {
+            "description": "Unauthorized Request"
+          },
           "404": {
             "description": "No such category error message.",
             "content": {
@@ -589,6 +625,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Request"
           },
           "404": {
             "description": "No such category error message.",
@@ -642,6 +681,9 @@
               }
             }
           },
+          "401": {
+            "description": "Unauthorized Request"
+          },
           "404": {
             "description": "No such category error message.",
             "content": {
@@ -679,6 +721,9 @@
               }
             }
           },
+          "401": {
+            "description": "Unauthorized Request"
+          },
           "404": {
             "description": "No such category error message.",
             "content": {
@@ -715,6 +760,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Request"
           },
           "404": {
             "description": "No such category error message.",
@@ -773,6 +821,9 @@
               }
             }
           },
+          "401": {
+            "description": "Unauthorized Request"
+          },
           "404": {
             "description": "No such category error message.",
             "content": {
@@ -829,6 +880,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized Request"
           },
           "404": {
             "description": "No such category error message.",
