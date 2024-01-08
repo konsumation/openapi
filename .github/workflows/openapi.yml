@@ -9,8 +9,6 @@ jobs:
           - 20.10.0
     steps:
       - uses: actions/checkout@v4.1.1
-        with:
-          repository: konsumation/konsumation.github.io
       - uses: actions/setup-node@v4.0.1
         with:
           node-version: ${{ matrix.node-version }}
@@ -26,6 +24,6 @@ jobs:
           personal_token: ${{ secrets.GH_TOKEN }}
           external_repository: konsumation/konsumation.github.io
           publish_branch: master
-#          publish_dir: openapi
-#          destination_dir: openapi
+          publish_dir: openapi
+          destination_dir: openapi
           enable_jekyll: true
