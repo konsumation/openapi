@@ -26,6 +26,6 @@ jobs:
           personal_token: ${{ secrets.GH_TOKEN }}
           external_repository: konsumation/konsumation.github.io
           publish_branch: master
-          publish_dir: openapi
-          destination_dir: openapi
+#          publish_dir: openapi
+#          destination_dir: openapi
           enable_jekyll: true
