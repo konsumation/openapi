@@ -1,20 +1,23 @@
 {
   "openapi": "3.0.3",
-  "servers":[{
-    "url": "https://mydomain.com"
-  }],
+  "servers": [
+    {
+      "url": "https://mydomain.com"
+    }
+  ],
   "info": {
     "title": "Collect resource usage in a home environment",
     "version": "0.0.0-semantic-release",
-    "license" : { "name": "MIT", "url": "https://github.com/konsumation/openapi/LICENSE" }
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/konsumation/openapi/LICENSE"
+    }
   },
   "paths": {
     "/admin/token": {
       "post": {
-        "tags": [
-          "admin"
-        ],
-        "summary" : "create token",
+        "tags": ["admin"],
+        "summary": "create token",
         "operationId": "createToken",
         "description": "create token.",
         "responses": {
@@ -27,25 +30,25 @@
                 }
               }
             }
-          },"401": {
+          },
+          "401": {
             "description": "Unauthorized Request"
+          },
+          "415": {
+            "description": "Unsupported Media Type"
           }
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.admin.token"
-            ]
+            "konsum_auth": ["konsum.admin.token"]
           }
         ]
       }
     },
     "/admin/stop": {
       "post": {
-        "tags": [
-          "admin"
-        ],
-        "summary" : "stop the service",
+        "tags": ["admin"],
+        "summary": "stop the service",
         "operationId": "stopServer",
         "description": "Stop konsum server.",
         "responses": {
@@ -65,19 +68,15 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.admin.stop"
-            ]
+            "konsum_auth": ["konsum.admin.stop"]
           }
         ]
       }
     },
     "/admin/reload": {
       "post": {
-        "tags": [
-          "admin"
-        ],
-        "summary" : "reload config",
+        "tags": ["admin"],
+        "summary": "reload config",
         "operationId": "reloadConfig",
         "description": "Reload konsum systemd config.",
         "responses": {
@@ -97,19 +96,15 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.admin.reload"
-            ]
+            "konsum_auth": ["konsum.admin.reload"]
           }
         ]
       }
     },
     "/admin/backup": {
       "post": {
-        "tags": [
-          "admin"
-        ],
-        "summary" : "create backup",
+        "tags": ["admin"],
+        "summary": "create backup",
         "operationId": "backupDataOnServer",
         "description": "Create backup on server.",
         "responses": {
@@ -129,17 +124,13 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.admin.backup"
-            ]
+            "konsum_auth": ["konsum.admin.backup"]
           }
         ]
       },
       "get": {
-        "tags": [
-          "admin"
-        ],
-        "summary" : "create backup",
+        "tags": ["admin"],
+        "summary": "create backup",
         "operationId": "backupData",
         "description": "Create backup.",
         "responses": {
@@ -151,23 +142,22 @@
                   "$ref": "#/components/schemas/TextOnlyMessage"
                 }
               }
-            }},
+            }
+          },
           "401": {
             "description": "Unauthorized Request"
           }
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.admin.backup"
-            ]
+            "konsum_auth": ["konsum.admin.backup"]
           }
         ]
       }
     },
     "/state": {
       "get": {
-        "summary" : "service status report",
+        "summary": "service status report",
         "operationId": "getServiceState",
         "description": "Retrieve service state.",
         "responses": {
@@ -182,18 +172,18 @@
                 }
               }
             }
+          },
+          "415": {
+            "description": "Unsupported Media Type"
           }
         },
-        "security": [
-        ]
+        "security": []
       }
     },
     "/authenticate": {
       "post": {
-        "tags": [
-          "authenticate"
-        ],
-        "summary" : "user login",
+        "tags": ["authenticate"],
+        "summary": "user login",
         "operationId": "authenticate",
         "description": "Login to request api token.",
         "externalDocs": {
@@ -221,6 +211,9 @@
               }
             }
           },
+          "415": {
+            "description": "Unsupported Media Type"
+          },
           "401": {
             "description": "Authentication failed.",
             "content": {
@@ -232,15 +225,12 @@
             }
           }
         },
-        "security": [
-        ]
+        "security": []
       }
     },
     "/category": {
       "get": {
-        "tags": [
-          "category"
-        ],
+        "tags": ["category"],
         "operationId": "getCategories",
         "summary": "Retrieve list of categories.",
         "responses": {
@@ -255,16 +245,18 @@
                   }
                 }
               }
-            }},
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type"
+          },
           "401": {
             "description": "Unauthorized Request"
           }
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.category"
-            ]
+            "konsum_auth": ["konsum.category"]
           }
         ]
       }
@@ -281,10 +273,8 @@
         }
       ],
       "put": {
-        "tags": [
-          "category"
-        ],
-        "summary" : "add category",
+        "tags": ["category"],
+        "summary": "add category",
         "operationId": "addCategory",
         "description": "Add a new category.",
         "responses": {
@@ -296,24 +286,21 @@
                   "$ref": "#/components/schemas/Message"
                 }
               }
-            }},
+            }
+          },
           "401": {
             "description": "Unauthorized Request"
           }
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.category.add"
-            ]
+            "konsum_auth": ["konsum.category.add"]
           }
         ]
       },
       "delete": {
-        "tags": [
-          "category"
-        ],
-        "summary" : "delete category",
+        "tags": ["category"],
+        "summary": "delete category",
         "operationId": "deleteCategory",
         "description": "Delete a category.",
         "responses": {
@@ -343,9 +330,7 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.category.delete"
-            ]
+            "konsum_auth": ["konsum.category.delete"]
           }
         ]
       }
@@ -380,10 +365,8 @@
         }
       ],
       "get": {
-        "tags": [
-          "value"
-        ],
-        "summary" : "get values of a category",
+        "tags": ["value"],
+        "summary": "get values of a category",
         "operationId": "getCategoryValues",
         "description": "List values of a category.",
         "responses": {
@@ -426,17 +409,13 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.value"
-            ]
+            "konsum_auth": ["konsum.value"]
           }
         ]
       },
       "post": {
-        "tags": [
-          "value"
-        ],
-        "summary" : "add values to a category",
+        "tags": ["value"],
+        "summary": "add values to a category",
         "operationId": "insertCategoryValues",
         "description": "Insert a value into a category.",
         "responses": {
@@ -466,17 +445,13 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.value.add"
-            ]
+            "konsum_auth": ["konsum.value.add"]
           }
         ]
       },
       "delete": {
-        "tags": [
-          "value"
-        ],
-        "summary" : "delete values from a category",
+        "tags": ["value"],
+        "summary": "delete values from a category",
         "operationId": "deleteCategoryValues",
         "description": "Delete a value from a category.",
         "responses": {
@@ -506,9 +481,7 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.value.delete"
-            ]
+            "konsum_auth": ["konsum.value.delete"]
           }
         ]
       }
@@ -525,9 +498,7 @@
         }
       ],
       "get": {
-        "tags": [
-          "meter"
-        ],
+        "tags": ["meter"],
         "summary": "list meters of a category",
         "operationId": "getCategoryMeters",
         "description": "List meters of a category.",
@@ -561,16 +532,12 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.meter"
-            ]
+            "konsum_auth": ["konsum.meter"]
           }
         ]
       },
       "put": {
-        "tags": [
-          "meter"
-        ],
+        "tags": ["meter"],
         "summary": "add a meter to a category",
         "operationId": "addCategoryMeter",
         "description": "Add a meter to a category.",
@@ -601,16 +568,12 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.meter.add"
-            ]
+            "konsum_auth": ["konsum.meter.add"]
           }
         ]
       },
       "post": {
-        "tags": [
-          "meter"
-        ],
+        "tags": ["meter"],
         "summary": "update a meter of a category",
         "operationId": "updateCategoryMeter",
         "description": "Update a meter.",
@@ -641,9 +604,7 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.meter.modify"
-            ]
+            "konsum_auth": ["konsum.meter.modify"]
           }
         ]
       }
@@ -660,9 +621,7 @@
         }
       ],
       "get": {
-        "tags": [
-          "note"
-        ],
+        "tags": ["note"],
         "summary": "list notes of a category",
         "operationId": "getCategoryNotes",
         "description": "List notes of a category.",
@@ -696,16 +655,12 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.note"
-            ]
+            "konsum_auth": ["konsum.note"]
           }
         ]
       },
       "put": {
-        "tags": [
-          "note"
-        ],
+        "tags": ["note"],
         "summary": "add a note to a category",
         "operationId": "addCategoryNote",
         "description": "add a note to a category.",
@@ -736,16 +691,12 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.note.add"
-            ]
+            "konsum_auth": ["konsum.note.add"]
           }
         ]
       },
       "post": {
-        "tags": [
-          "note"
-        ],
+        "tags": ["note"],
         "summary": "add a note of a category",
         "operationId": "updateCategoryNote",
         "description": "Update a note.",
@@ -776,9 +727,7 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.note.modify"
-            ]
+            "konsum_auth": ["konsum.note.modify"]
           }
         ]
       }
@@ -803,9 +752,7 @@
         }
       ],
       "delete": {
-        "tags": [
-          "meter"
-        ],
+        "tags": ["meter"],
         "summary": "delete a meter from a category",
         "operationId": "deleteCategoryMeter",
         "description": "Delete a meter.",
@@ -836,9 +783,7 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.meter.delete"
-            ]
+            "konsum_auth": ["konsum.meter.delete"]
           }
         ]
       }
@@ -863,10 +808,8 @@
         }
       ],
       "delete": {
-        "tags": [
-          "note"
-        ],
-        "summary" : "delete a note from a category",
+        "tags": ["note"],
+        "summary": "delete a note from a category",
         "operationId": "deleteCategoryNote",
         "description": "Delete a note.",
         "responses": {
@@ -896,9 +839,7 @@
         },
         "security": [
           {
-            "konsum_auth": [
-              "konsum.note.delete"
-            ]
+            "konsum_auth": ["konsum.note.delete"]
           }
         ]
       }
@@ -919,9 +860,7 @@
       },
       "Category": {
         "type": "object",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string",
@@ -948,9 +887,7 @@
       },
       "Meter": {
         "type": "object",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string",
@@ -976,15 +913,11 @@
       },
       "Note": {
         "type": "object",
-        "required": [
-          "id"
-        ]
+        "required": ["id"]
       },
       "Value": {
         "type": "object",
-        "required": [
-          "id"
-        ]
+        "required": ["id"]
       },
       "State": {
         "type": "object",
@@ -1017,10 +950,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "username",
-          "password"
-        ]
+        "required": ["username", "password"]
       },
       "AuthResponse": {
         "type": "object",
@@ -1044,10 +974,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "token_type",
-          "access_token"
-        ]
+        "required": ["token_type", "access_token"]
       },
       "Message": {
         "type": "object",
