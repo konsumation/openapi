@@ -15,15 +15,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run docs
-#      - uses: actions/checkout@v4.1.1
-#        with:
-#          repository: konsumation/konsumation.github.io
       - name: Deploy Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          personal_token: ${{ secrets.GH_TOKEN }}
-#          external_repository: konsumation/konsumation.github.io
+          personal_token: ${{ secrets.GH_TOKEN }}
+          external_repository: konsumation/konsumation.github.io
           publish_branch: master
           publish_dir: openapi
           destination_dir: openapi
