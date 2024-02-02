@@ -5,4 +5,4 @@
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fkonsumation%2Fopenapi%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/konsumation/openapi/goto)
 
 
-openapi definition of konsumation the server.
+openapi definition of [[konsumation](https://konsumation.github.io)] the server.
