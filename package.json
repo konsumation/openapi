@@ -17,7 +17,7 @@
   "scripts": {
     "docs": "npm run docs:openapi",
     "docs:openapi": "redocly build-docs -o openapi/index.html openapi/openapi.json",
-    "lint": "redocly lint openapi/openapi.json && npm run lint:openapi",
+    "lint": "npm run lint:openapi",
     "lint:openapi": "redocly lint openapi/openapi.json"
   },
   "devDependencies": {
