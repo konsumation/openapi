@@ -21,7 +21,7 @@
     "lint:openapi": "redocly lint openapi/openapi.json"
   },
   "devDependencies": {
-    "@redocly/cli": "^1.10.3",
+    "@redocly/cli": "^1.10.4",
     "semantic-release": "^23.0.2"
   },
   "repository": {
