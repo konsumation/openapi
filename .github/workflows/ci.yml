@@ -1,5 +1,5 @@
 name: CI
-'on':
+on:
   push:
     branches:
       - master
@@ -8,6 +8,8 @@ name: CI
     branches:
       - master
       - next
+permissions:
+  contents: read
 jobs:
   test-node:
     runs-on: ubuntu-latest
@@ -35,24 +37,24 @@ jobs:
     needs:
       - test-node
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4.1.2
-      - uses: actions/setup-node@v4.0.2
-        with:
-          node-version: 20.11.1
-          cache: npm
-          cache-dependency-path: package-lock.json
-      - run: npm ci
-      - run: npx semantic-release
-        env:
-          CI: 'true'
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     permissions:
       contents: write
       issues: write
       pull-requests: write
       id-token: write
+    steps:
+      - uses: actions/checkout@v4.1.2
+      - uses: actions/setup-node@v4.0.2
+        with:
+          node-version: 20.12.0
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npx semantic-release
+        env:
+          CI: "true"
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   finish:
     needs:
       - test-node
@@ -64,5 +66,3 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: build/coverage/lcov.info
           parallel-finished: true
-permissions:
-  contents: read
