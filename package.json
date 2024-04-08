@@ -5,6 +5,9 @@
     "access": "public",
     "provenance": true
   },
+  "files": [
+    "openapi/openapi.json"
+  ],
   "contributors": [
     {
       "name": "Markus Felten",
