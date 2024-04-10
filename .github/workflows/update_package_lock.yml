@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version:
+          - 20.12.1
         browser:
           - chrome
     steps:
