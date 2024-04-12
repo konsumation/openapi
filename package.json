@@ -18,6 +18,8 @@
     }
   ],
   "scripts": {
+    "start":"npm run start:openapi",
+    "start:openapi": "redocly preview-docs openapi/openapi.json",
     "docs": "npm run docs:openapi",
     "docs:openapi": "redocly build-docs -o openapi/index.html openapi/openapi.json",
     "lint": "npm run lint:openapi",
