@@ -18,7 +18,7 @@
     }
   ],
   "scripts": {
-    "start":"npm run start:openapi",
+    "start": "npm run start:openapi",
     "start:openapi": "redocly preview-docs openapi/openapi.json",
     "docs": "npm run docs:openapi",
     "docs:openapi": "redocly build-docs -o openapi/index.html openapi/openapi.json",
@@ -27,7 +27,10 @@
   },
   "devDependencies": {
     "@redocly/cli": "^1.11.0",
-    "semantic-release": "^23.0.8"
+    "@semantic-release/commit-analyzer": "^12.0.0",
+    "@semantic-release/release-notes-generator": "^13.0.0",
+    "semantic-release": "^23.0.8",
+    "semantic-release-replace-plugin": "^1.2.7"
   },
   "repository": {
     "type": "git",
@@ -37,6 +40,36 @@
     "url": "https://github.com/konsumation/openapi/issues"
   },
   "homepage": "https://github.com/konsumation/openapi#readme",
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "semantic-release-replace-plugin",
+        {
+          "replacements": [
+            {
+              "files": [
+                "openapi/openapi.json"
+              ],
+              "from": "\"0.0.0-semantic-release\"",
+              "to": "\"${nextRelease.version}\"",
+              "results": [
+                {
+                  "file": "openapi/openapi.json",
+                  "hasChanged": true,
+                  "numMatches": 1,
+                  "numReplacements": 1
+                }
+              ],
+              "countMatches": true
+            }
+          ]
+        }
+      ],
+      "@semantic-release/npm"
+    ]
+  },
   "template": {
     "inheritFrom": [
       "arlac77/template-openapi",
