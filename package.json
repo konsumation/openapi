@@ -68,12 +68,7 @@
         }
       ],
       "@semantic-release/npm",
-      [
-        "@semantic-release/git",
-        {
-          "assets": ["openapi/openapi.json"]
-        }
-      ]
+      "@semantic-release/github"
     ]
   },
   "template": {
