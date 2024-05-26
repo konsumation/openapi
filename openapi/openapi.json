@@ -1818,8 +1818,7 @@
         "required": ["name"],
         "properties": {
           "name": {
-            "type": "string",
-            "description": "The name of the category."
+            "$ref": "#/components/schemas/CategoryName"
           },
           "description": {
             "type": "string",
@@ -1857,8 +1856,7 @@
         "required": ["name"],
         "properties": {
           "name": {
-            "type": "string",
-            "description": "The name of the meter."
+            "$ref": "#/components/schemas/MeterName"
           },
           "description": {
             "type": "string",
@@ -1900,8 +1898,7 @@
         "required": ["name"],
         "properties": {
           "name": {
-            "type": "string",
-            "description": "The name of the category."
+            "$ref": "#/components/schemas/NoteName"
           },
           "description": {
             "type": "string",
