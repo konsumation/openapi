@@ -29,7 +29,7 @@
     "@redocly/cli": "^1.19.0",
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/release-notes-generator": "^14.0.1",
-    "semantic-release": "^24.0.0",
+    "semantic-release": "^24.1.0",
     "semantic-release-replace-plugin": "^1.2.7"
   },
   "repository": {
