@@ -8,7 +8,6 @@ jobs:
       - uses: actions/setup-node@v6.1.0
         with:
           node-version: 20.15.0
-          cache: npm
       - run: npm ci
       - run: npm run docs
       - name: Deploy Pages
