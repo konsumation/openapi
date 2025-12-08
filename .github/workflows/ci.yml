@@ -24,7 +24,6 @@ jobs:
         uses: actions/setup-node@v6.1.0
         with:
           node-version: ${{ matrix.node-version }}
-          cache-dependency-path: package-lock.json
       - name: test and coverage
         run: npm run cover --if-present
       - name: coveralls
@@ -51,7 +50,6 @@ jobs:
         uses: actions/setup-node@v6.1.0
         with:
           node-version: 20.15.0
-          cache-dependency-path: package-lock.json
       - name: release
         run: npx semantic-release
         env:
