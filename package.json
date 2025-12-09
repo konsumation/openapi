@@ -8,6 +8,7 @@
   "files": [
     "openapi/openapi.json"
   ],
+  "packageManager": "npm@11.6.3+sha512.4085a763162e0e3acd19a4e9d23ad3aa0978e501ccf947dd7233c12a689ae0bb0190763c4ef12366990056b34eec438903ffed38fde4fbd722a17c2a7407ee92",
   "contributors": [
     {
       "name": "Markus Felten",
@@ -23,7 +24,7 @@
     "docs": "node --run docs:openapi",
     "docs:openapi": "redocly build-docs -o openapi/index.html openapi/openapi.json",
     "lint": "node --run lint:openapi",
-    "lint:openapi": "redocly lint openapi/openapi.json"
+    "lint:openapi": "redocly lint openapi/openapi.json && redocly lint  --format=github-actions openapi/openapi.json"
   },
   "devDependencies": {
     "@redocly/cli": "^2.12.4",
@@ -73,9 +74,9 @@
   },
   "template": {
     "inheritFrom": [
+      "arlac77/template-npm",
       "arlac77/template-openapi",
       "konsumation/template"
     ]
-  },
-  "packageManager": "npm@11.6.3+sha512.4085a763162e0e3acd19a4e9d23ad3aa0978e501ccf947dd7233c12a689ae0bb0190763c4ef12366990056b34eec438903ffed38fde4fbd722a17c2a7407ee92"
+  }
 }
