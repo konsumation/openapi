@@ -24,7 +24,7 @@
     "docs": "node --run docs:openapi",
     "docs:openapi": "redocly build-docs -o openapi/index.html openapi/openapi.json",
     "lint": "node --run lint:openapi",
-    "lint:openapi": "redocly lint openapi/openapi.json && redocly lint  --format=github-actions openapi/openapi.json"
+    "lint:openapi": "redocly lint --format=github-actions openapi/openapi.json"
   },
   "devDependencies": {
     "@redocly/cli": "^2.12.4",
